@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio profesional Ahmad Rizki Adhi Bhuana — pengalaman produksi, packaging, operasional, dan multimedia.">
+  <title>Ahmad Rizki Adhi Bhuana | Portofolio</title>
+  <style>
+    :root {
+      --navy: #14243a;
+      --navy-2: #203852;
+      --teal: #16a6a1;
+      --ink: #243247;
+      --muted: #68778b;
+      --line: #e3e9ef;
+      --paper: #ffffff;
+      --soft: #f3f6f9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--soft); color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif; line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    header {
+      background: var(--navy); color: white; min-height: 590px;
+      position: relative; overflow: hidden;
+    }
+    header::before, header::after {
+      content: ""; position: absolute; border: 1px solid rgba(255,255,255,.10);
+      border-radius: 50%; pointer-events: none;
+    }
+    header::before { width: 560px; height: 560px; right: -170px; top: -210px; }
+    header::after { width: 380px; height: 380px; right: -80px; top: -120px; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 25px 0; position: relative; z-index: 1;
+    }
+    .brand { font-weight: 800; letter-spacing: .08em; font-size: .9rem; }
+    .brand span { color: #5dd5ce; }
+    .nav-links { display: flex; gap: 26px; font-size: .88rem; color: #d7e1ec; }
+    .nav-links a:hover { color: #5dd5ce; }
+    .hero {
+      position: relative; z-index: 1; display: grid;
+      grid-template-columns: 1.4fr .6fr; align-items: center; gap: 50px;
+      padding: 85px 0 110px;
+    }
+    .eyebrow {
+      color: #68d8d1; text-transform: uppercase; letter-spacing: .18em;
+      font-size: .76rem; font-weight: 700;
+    }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.7rem); line-height: 1.08; margin: 18px 0; letter-spacing: -.045em; }
+    .hero p { color: #c7d3df; max-width: 650px; font-size: 1.08rem; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 19px; border-radius: 7px; font-weight: 700; font-size: .9rem;
+      transition: .2s ease;
+    }
+    .btn-primary { background: var(--teal); color: #062b31; }
+    .btn-primary:hover { background: #45c8c1; transform: translateY(-2px); }
+    .btn-outline { border: 1px solid #8293a6; color: white; }
+    .btn-outline:hover { border-color: white; }
+    .hero-card {
+      justify-self: end; width: 245px; height: 320px; border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.2); background: linear-gradient(145deg, #29435d, #172a40);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,.18); padding: 20px; text-align: center;
+    }
+    .profile-img {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      border: 3px solid #5dd5ce; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .hero-card strong { margin-top: 15px; font-size: .95rem; display: block; }
+    .hero-card small { color: #b8c7d6; margin-top: 3px; display: block; }
+    main { padding: 70px 0 40px; }
+    section { margin-bottom: 76px; scroll-margin-top: 25px; }
+    .section-heading { margin-bottom: 28px; }
+    .section-heading span {
+      color: var(--teal); font-size: .75rem; letter-spacing: .16em;
+      font-weight: 800; text-transform: uppercase;
+    }
+    h2 { color: var(--navy); font-size: clamp(1.8rem, 3vw, 2.35rem); margin: 5px 0 0; letter-spacing: -.035em; }
+    .intro { color: var(--muted); max-width: 760px; margin: 14px 0 0; }
+    .about-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 24px; }
+    .panel, .timeline-card, .skill-card, .contact-card {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(24,45,68,.035);
+    }
+    .panel { padding: 28px; }
+    .panel p { margin: 0; color: #536276; }
+    .facts { display: grid; gap: 15px; }
+    .fact { padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border: 0; padding: 0; }
+    .fact small { display: block; color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
+    .fact strong { color: var(--navy); font-size: .95rem; overflow-wrap: anywhere; }
+    .timeline { display: grid; gap: 18px; }
+    .timeline-card { padding: 25px 27px; position: relative; }
+    .timeline-top { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; }
+    .timeline-card h3 { margin: 0; color: var(--navy); font-size: 1.12rem; }
+    .role { color: var(--teal); font-weight: 700; font-size: .9rem; margin-top: 3px; }
+    .date { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+    .timeline-card p { color: #59687b; margin: 15px 0 0; }
+    .education-meta { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .skill-card { padding: 25px; }
+    .skill-card h3 { margin: 0 0 16px; color: var(--navy); }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tag { padding: 7px 12px; border-radius: 6px; background: #edf7f6; color: #176b69; font-size: .83rem; font-weight: 650; }
+    .tag.neutral { background: #f0f3f7; color: #46566b; }
+    .contact-card {
+      padding: 32px; display: flex; align-items: center; justify-content: space-between;
+      gap: 25px; background: var(--navy); color: white;
+    }
+    .contact-card h2 { color: white; }
+    .contact-card p { color: #c7d3df; margin: 8px 0 0; }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; min-width: 250px; font-size: .9rem; }
+    .contact-links a { color: #7be0d9; overflow-wrap: anywhere; }
+    .contact-links a:hover { text-decoration: underline; }
+    footer { padding: 25px 0 35px; text-align: center; color: #8290a1; font-size: .82rem; }
+
+    @media (max-width: 760px) {
+      header { min-height: auto; }
+      .nav-links { gap: 13px; font-size: .78rem; }
+      .hero { grid-template-columns: 1fr; padding: 65px 0 80px; gap: 35px; }
+      .hero-card { justify-self: start; width: 100%; height: auto; flex-direction: row; gap: 20px; text-align: left; }
+      .profile-img { width: 85px; height: 85px; }
+      .hero-card strong { margin: 0; }
+      .about-grid, .skills-grid { grid-template-columns: 1fr; }
+      .timeline-top { flex-direction: column; gap: 5px; }
+      .date { white-space: normal; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+      .contact-links { min-width: 0; }
+    }
+    @media (max-width: 440px) {
+      .container { width: min(100% - 28px, 1120px); }
+      nav { align-items: flex-start; gap: 14px; flex-direction: column; }
+      .nav-links { flex-wrap: wrap; }
+      main { padding-top: 48px; }
+      .panel, .timeline-card, .skill-card, .contact-card { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="beranda">
+    <div class="container">
+      <nav aria-label="Navigasi utama">
+        <a class="brand" href="#beranda">AR<span>.</span> PORTFOLIO</a>
+        <div class="nav-links">
+          <a href="#tentang">Tentang</a>
+          <a href="#pengalaman">Pengalaman</a>
+          <a href="#pendidikan">Pendidikan</a>
+          <a href="#keahlian">Keahlian</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Portofolio Profesional</div>
+          <h1>Ahmad Rizki<br>Adhi Bhuana</h1>
+          <p>Memiliki pengalaman dalam proses produksi dan pengemasan, menjaga kualitas hasil kerja, serta menjalankan pekerjaan sesuai standar operasional perusahaan. Memiliki latar belakang pendidikan Multimedia dan keterampilan pendukung di bidang digital.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pengalaman">Lihat Pengalaman Kerja</a>
+            <a class="btn btn-outline" href="mailto:achmadrizki2903@gmail.com">Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Foto Ahmad Rizki Adhi Bhuana">
+          <img class="profile-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAYACAADASIAAhEBAxEB/8QAHQAAAgIDAQEBAAAAAAAAAAAAAgMAAQQGBwUICf/EAFIQAAEDAwMSO1T4A3AMBwAAAAEAAhEDBCExEkIWB3ETFVFXUlNzkpSxs9I4VVZ0g4SSldPThpA3M4WT0/AUMTI0QUJSYmN2oSM1coLhFiU2wvH/2gAIAQEAAD8A6L03YUK1Ivh2S3e/91vIawACFpPSlI/MnBf+63YNXN2f43xQ1G4MFFC0I1K8m5XvCKAihQg3I4IilRshG3fU4I2hEAgI1AihQg5Co2o4CIn7hE1AMBC1ChA2ghahYm3m0IRuRInuI0UBCmI3q14U3413sU48C0fChI20f/2QA==" alt="Foto Ahmad Rizki Adhi Bhuana">
+          <strong>Ahmad Rizki A. B.</strong>
+          <small>Production & Multimedia</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="tentang">
+      <div class="section-heading">
+        <span>01 / Tentang Saya</span>
+        <h2>Profil Singkat</h2>
+      </div>
+      <div class="about-grid">
+        <div class="panel">
+          <p>Seorang profesional dengan pengalaman di sektor industri, khususnya dalam bidang produksi, pengemasan (packaging), dan kontrol kualitas operasional. Terbiasa bekerja secara teliti, cekatan, dan mematuhi Standar Operasional Prosedur (SOP) keselamatan kerja yang berlaku. Didukung dengan latar belakang pendidikan di bidang Multimedia, saya juga memiliki kemampuan adaptasi yang baik terhadap teknologi dan lingkungan kerja dinamis.</p>
+        </div>
+        <div class="panel facts">
+          <div class="fact">
+            <small>Domisili</small>
+            <strong>Indonesia</strong>
+          </div>
+          <div class="fact">
+            <small>Email Utama</small>
+            <strong>achmadrizki2903@gmail.com</strong>
+          </div>
+          <div class="fact">
+            <small>Keahlian Utama</small>
+            <strong>Produksi, Packaging, Operasional, Multimedia</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman">
+      <div class="section-heading">
+        <span>02 / Karier</span>
+        <h2>Pengalaman Kerja</h2>
+        <p class="intro">Rekam jejak profesional dalam bidang operasional, produksi, dan pengemasan.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div>
+              <h3>Pengalaman Industri & Produksi</h3>
+              <div class="role">Staff Produksi & Packaging</div>
+            </div>
+            <div class="date">Pengalaman Kerja</div>
+          </div>
+          <p>Bertanggung jawab penuh dalam menjalankan proses lini produksi dan pengemasan barang sesuai dengan target perusahaan. Memastikan kualitas produk terjaga dari awal proses hingga siap didistribusikan, serta konsisten menerapkan aturan keselamatan dan kebersihan kerja (K3).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan">
+      <div class="section-heading">
+        <span>03 / Akademik</span>
+        <h2>Pendidikan</h2>
+        <p class="intro">Latar belakang pendidikan formal yang membentuk kompetensi teknis dan analitis.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div>
+              <h3>Pendidikan Menengah Kejuruan / Multimedia</h3>
+              <div class="role">Bidang Keahlian Multimedia</div>
+            </div>
+            <div class="date">Pendidikan Formal</div>
+          </div>
+          <p class="education-meta">Mempelajari dasar-dasar teknologi informasi, pengolahan media digital, desain grafis, serta pemecahan masalah secara sistematis yang mendukung ketelitian dalam berbagai bidang pekerjaan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian">
+      <div class="section-heading">
+        <span>04 / Kompetensi</span>
+        <h2>Keahlian & Keterampilan</h2>
+        <p class="intro">Kombinasi keahlian teknis operasional pabrik/produksi serta keterampilan pendukung digital.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Keahlian Operasional & Produksi</h3>
+          <div class="tags">
+            <span class="tag">Produksi & Manufaktur</span>
+            <span class="tag">Packaging (Pengemasan)</span>
+            <span class="tag">Quality Control (QC)</span>
+            <span class="tag">Standar SOP & K3</span>
+            <span class="tag">Manajemen Waktu</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Keahlian Pendukung & Multimedia</h3>
+          <div class="tags">
+            <span class="tag neutral">Multimedia Dasar</span>
+            <span class="tag neutral">Desain Grafis</span>
+            <span class="tag neutral">Komputer & Administrasi</span>
+            <span class="tag neutral">Kerjasama Tim</span>
+            <span class="tag neutral">Komunikasi Efektif</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="section-heading">
+        <span>05 / Hubungi Saya</span>
+        <h2>Mari Terhubung</h2>
+      </div>
+      <div class="contact-card">
+        <div>
+          <h2>Terbuka untuk Peluang Baru</h2>
+          <p>Jika Anda memiliki informasi lowongan pekerjaan, kolaborasi, atau pertanyaan seputar profil saya, silakan hubungi melalui kontak di samping.</p>
+        </div>
+        <div class="contact-links">
+          <div>
+            <small style="color: #9bb1c8; display:block; font-size:0.75rem; text-transform:uppercase;">Email</small>
+            <a href="mailto:achmadrizki2903@gmail.com">achmadrizki2903@gmail.com</a>
+          </div>
+          <div>
+            <small style="color: #9bb1c8; display:block; font-size:0.75rem; text-transform:uppercase;">Telepon / WhatsApp</small>
+            <a href="tel:+6280000000000">+62 8xx-xxxx-xxxx</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ahmad Rizki Adhi Bhuana. Hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
